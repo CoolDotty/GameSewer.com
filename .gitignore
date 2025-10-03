@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Yarn cache
+.yarn/
+.yarnrc.yml
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+
+# Editor directories
+.vscode/
+.idea/
+
+# Misc
+*.tgz
+
+# Optional: coverage reports
+coverage/
+
+# Optional: TypeScript
+*.tsbuildinfo

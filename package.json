@@ -1,0 +1,15 @@
+{
+  "name": "gamesewer.com",
+  "version": "1.0.0",
+  "description": "Game Sewer static site",
+  "scripts": {
+  "dev": "nodemon dev-server.js"
+  },
+  "author": "CoolDotty",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
