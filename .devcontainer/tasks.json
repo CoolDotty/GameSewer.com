@@ -1,0 +1,11 @@
+{
+  "tasks": [
+    {
+      "name": "serve dev",
+      "command": "yarn dev",
+      "init": true,
+      "auto": true,
+      "openIn": "newTerminal"
+    }
+  ]
+}

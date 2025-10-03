@@ -1,15 +1,27 @@
 {
   "name": "gamesewer.com",
   "version": "1.0.0",
-  "description": "Game Sewer static site",
+  "private": true,
   "scripts": {
-  "dev": "nodemon dev-server.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write .",
+    "lint": "eslint ."
   },
-  "author": "CoolDotty",
-  "license": "MIT",
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
   "devDependencies": {
-    "browser-sync": "^3.0.4",
-    "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "@types/node": "24.6.2",
+    "@types/react": "19.2.0",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
+    "typescript": "latest"
   }
 }

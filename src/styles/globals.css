@@ -1,0 +1,123 @@
+#screen {
+  width: 42rem;
+  height: 29rem;
+  padding: 1rem 0.25rem;
+  overflow: hidden;
+  position: relative;
+  background: rgb(112, 112, 112);
+  background: radial-gradient(circle,
+      rgba(40, 44, 49, 1) 90%,
+      rgba(12, 14, 16, 1) 100%);
+  border-top: 24px solid #5b5b53;
+  border-left: 30px solid #3b3d38;
+  border-bottom: 28px solid #7f7c77;
+  border-radius: 10px;
+  border-right: 30px solid #86857f;
+  text-shadow:
+    0px 0 2px lime,
+    -1px 0 1px lime;
+}
+
+#screenborder {
+  position: relative;
+  width: 42rem;
+  height: 100%;
+  padding-left: 0.5rem;
+  overflow: hidden;
+}
+
+#content {
+  position: absolute;
+}
+
+body {
+  margin: 1rem;
+  background: black;
+  height: calc(100vh - 2rem);
+  line-height: 16px;
+  color: lime;
+  font-size: 15px;
+}
+
+a,
+a:visited {
+  color: lime;
+}
+
+#igroup {
+  display: inline;
+  position: relative;
+}
+
+#cursor {
+  position: absolute;
+  left: 0;
+  border-bottom: 2px lime;
+  height: 1rem;
+  display: inline-block;
+  animation: blink-animation 0.5s steps(2, start) infinite;
+}
+
+input {
+  background: transparent;
+  color: lime;
+  text-transform: uppercase;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  border: 0;
+  font-size: 15px;
+  width: 50%;
+  caret-color: transparent;
+  margin-left: 1.75px;
+  text-shadow:
+    0px 0 2px lime,
+    -1px 0 1px lime;
+}
+
+input:focus,
+input:active {
+  outline: 0;
+}
+
+pre {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 19px;
+  display: inline;
+}
+
+@keyframes blink-animation {
+  to {
+    opacity: 0.1;
+  }
+}
+
+@media only screen and (min-width: 79px) and (max-width: 1281px) {
+  #screen {
+    width: calc(100% - 20px - 0.5rem);
+    height: calc(100vh - 15px - 2rem);
+    padding: 1rem 0.25rem;
+    overflow: hidden;
+    position: relative;
+    background: #b5b9ab;
+    border-top: 5px solid #727876;
+    border-left: 10px solid #abadaa;
+    border-bottom: 10px solid #7a7b6d;
+    border-right: 10px solid #7a7b6d;
+    color: #493f35;
+    border-radius: 0;
+    text-shadow: 3px 3px 0 rgba(52, 56, 51, 0.15);
+  }
+
+  a,
+  a:visited {
+    color: #493f35;
+  }
+
+  input {
+    color: #493f35;
+    text-shadow: none;
+  }
+
+  body {
+    margin: 0;
+  }
+}
