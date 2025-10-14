@@ -12,7 +12,8 @@
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-photo-album": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "24.6.2",
