@@ -24,12 +24,17 @@ export const useElementInView = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (isVisible) {
-      // Do your effect here, e.g., add a CSS class or run animation
-      console.log('Element is in view!');
-    }
-  }, [isVisible]);
-
   return [ref, isVisible];
+};
+
+export const useWindowWidth = () => {
+  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return width;
 };
