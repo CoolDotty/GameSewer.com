@@ -23,6 +23,8 @@ jobs:
       - name: Build Next.js static site
         run: |
           yarn build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
