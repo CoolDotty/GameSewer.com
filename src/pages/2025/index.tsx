@@ -113,11 +113,19 @@ const Events2025: React.FC<Events2025Props> = (props) => {
                 ></path>
               </svg>
             </a>
-            <a
+            <button
               className={styles.socialLink}
-              href="https://discord.gg/Mx4cTetu9G"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window === 'undefined') return;
+                const url = atob('aHR0cHM6Ly9kaXNjb3JkLmdnL3V1dkFYQlFaVzY=');
+                const a = document.createElement('a');
+                a.href = url;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+              }}
               aria-label="Discord"
             >
               {/* Discord SVG */}
@@ -134,7 +142,7 @@ const Events2025: React.FC<Events2025Props> = (props) => {
                   stroke-width="1"
                 ></path>
               </svg>
-            </a>
+            </button>
           </div>
         </header>
         <main className={styles.main}>

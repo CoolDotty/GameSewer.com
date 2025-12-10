@@ -86,6 +86,7 @@
 
 .socialLink {
   display: inline-flex;
+  cursor: pointer;
   width: 4em;
   height: 4em;
   align-items: center;
