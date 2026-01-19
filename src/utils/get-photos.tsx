@@ -20,7 +20,7 @@ export type Photo = {
   preview?: string;
 };
 
-export const archiveDomain = 'https://photos.gamesewer.com/';
+export const archiveDomain = 'https://dotty.cool/game-sewer-photo-archive/';
 
 export async function getArchivedPhotos(
   owner: string,
