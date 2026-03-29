@@ -28,7 +28,7 @@ export async function getArchivedPhotos(
   branch = 'main'
 ): Promise<Photo[]> {
   const headers = {
-    Authorization: `Bearer ${GITHUB_TOKEN}`,
+    ...(GITHUB_TOKEN ? {Authorization: `Bearer ${GITHUB_TOKEN}`} : {}),
     Accept: 'application/vnd.github.v3+json',
   };
 

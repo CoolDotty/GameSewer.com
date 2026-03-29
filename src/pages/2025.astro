@@ -1,0 +1,12 @@
+---
+import Events2025 from '../components/Events2025';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { archiveDomain, getArchivedPhotos } from '../utils/get-photos';
+
+const photos = await getArchivedPhotos('CoolDotty', 'game-sewer-photo-archive');
+const thisYearPhotos = photos.filter((photo) => photo.original.startsWith(`${archiveDomain}2025`));
+---
+
+<BaseLayout title="GameSewer/Vancouver">
+  <Events2025 client:only="react" photos={thisYearPhotos} />
+</BaseLayout>
