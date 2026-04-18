@@ -21,7 +21,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <li>SOMETHING ELSE?</li>
       </ul>
       <p class="callout__contact">
-        SEND YOU OR A FRIEND'S ART TO
+        <span class="callout__new">*NEW*</span><br />
+        <a href="https://forms.gle/GwoS193x6aFtkzvK6" target="_blank" rel="noopener noreferrer">SIGN UP HERE!</a>
+      </p>
+      <p class="callout__contact">
+        HAVE ANY QUESTIONS?
         <a href="mailto:tip@gamesewer.com">TIP@GAMESEWER.COM</a>
       </p>
       <div class="social" aria-label="Social links">
@@ -247,10 +251,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .callout__contact {
     max-inline-size: 22ch;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
     font-size: clamp(1.35rem, 2.1vw, 1.95rem);
     line-height: 1.05;
     text-shadow: 0 2px 0 rgb(0 95 64 / 0.78);
+  }
+
+  .callout__new {
+    display: inline-block;
+    color: #fff;
+    animation: callout-text-shine 3.2s ease-in-out infinite;
   }
 
   .callout__contact a {
@@ -350,6 +360,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         0 0 1.35rem rgb(255 214 82 / 0.48),
         0 0 2.8rem rgb(255 214 82 / 0.26),
         inset 0 1px 0 rgb(255 255 255 / 0.72);
+      text-shadow:
+        0 1px 0 rgb(255 255 255 / 0.18),
+        0 0 0.95rem rgb(255 223 124 / 0.68);
+    }
+  }
+
+  @keyframes callout-text-shine {
+    0%,
+    100% {
+      transform: scale(1);
+      text-shadow:
+        0 1px 0 rgb(255 255 255 / 0.18),
+        0 0 0.7rem rgb(255 223 124 / 0.55);
+    }
+
+    45%,
+    55% {
+      transform: scale(1.06);
       text-shadow:
         0 1px 0 rgb(255 255 255 / 0.18),
         0 0 0.95rem rgb(255 223 124 / 0.68);
