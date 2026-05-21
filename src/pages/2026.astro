@@ -13,7 +13,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
     <section class="callout" aria-label="Art request">
       <p class="callout__intro">WE'RE SO BACK VANCOUVER</p>
-      <p class="callout__eyebrow">2026 CALL FOR ART</p>
       <ul class="callout__list">
         <li>VIDEOGAMES</li>
         <li>COOL BOOTHS</li>
@@ -21,8 +20,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <li>SOMETHING ELSE?</li>
       </ul>
       <p class="callout__contact">
-        <span class="callout__new">*NEW*</span><br />
-        <a href="https://forms.gle/GwoS193x6aFtkzvK6" target="_blank" rel="noopener noreferrer">SIGN UP HERE!</a>
+        <span class="callout__closed">SUBMISSIONS ARE NOW CLOSED</span><br />
+        <span class="callout__thanks">THANK YOU TO EVERYONE WHO APPLIED!</span>
       </p>
       <p class="callout__contact">
         HAVE ANY QUESTIONS?
@@ -197,31 +196,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       0 0 1.8rem rgb(70 255 152 / 0.24);
   }
 
-  .callout__eyebrow {
-    display: inline-flex;
-    justify-self: center;
-    align-items: center;
-    min-block-size: 4.25rem;
-    margin-block-end: 0.85rem;
-    padding: 0.55rem 1.45rem 0.4rem;
-    color: #005f40;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-    line-height: 1;
-    letter-spacing: 0.04em;
-    background: #aeffe4;
-    border-radius: 999px;
-    border: 2px solid rgb(215 255 242 / 0.95);
-    box-shadow:
-      0 0.35rem 0.75rem rgb(0 0 0 / 0.18),
-      0 0 1.1rem rgb(255 214 82 / 0.38),
-      0 0 2.4rem rgb(255 214 82 / 0.2),
-      inset 0 1px 0 rgb(255 255 255 / 0.65);
-    text-shadow:
-      0 1px 0 rgb(255 255 255 / 0.18),
-      0 0 0.7rem rgb(255 223 124 / 0.55);
-    transform-origin: center;
-    animation: callout-shine 3.2s ease-in-out infinite;
-  }
+
 
   .callout__heading {
     max-inline-size: 12ch;
@@ -261,6 +236,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: inline-block;
     color: #fff;
     animation: callout-text-shine 3.2s ease-in-out infinite;
+  }
+
+  .callout__closed {
+    display: inline-block;
+    color: #ffd452;
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
+    text-shadow:
+      0 2px 0 rgb(0 72 38 / 0.82),
+      0 0 0.65rem rgb(255 214 82 / 0.55);
+  }
+
+  .callout__thanks {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #aeffe4;
+    font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+    text-shadow: 0 1px 0 rgb(0 72 38 / 0.7);
   }
 
   .callout__contact a {
@@ -336,53 +328,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
   }
 
-  @keyframes callout-shine {
-    0%,
-    100% {
-      color: #376122;
-      transform: scale(1);
-      box-shadow:
-        0 0.35rem 0.75rem rgb(0 0 0 / 0.18),
-        0 0 1.1rem rgb(255 214 82 / 0.38),
-        0 0 2.4rem rgb(255 214 82 / 0.2),
-        inset 0 1px 0 rgb(255 255 255 / 0.65);
-      text-shadow:
-        0 1px 0 rgb(255 255 255 / 0.18),
-        0 0 0.7rem rgb(255 223 124 / 0.55);
-    }
 
-    45%,
-    55% {
-      color: #58701f;
-      transform: scale(1.06);
-      box-shadow:
-        0 0.35rem 0.75rem rgb(0 0 0 / 0.18),
-        0 0 1.35rem rgb(255 214 82 / 0.48),
-        0 0 2.8rem rgb(255 214 82 / 0.26),
-        inset 0 1px 0 rgb(255 255 255 / 0.72);
-      text-shadow:
-        0 1px 0 rgb(255 255 255 / 0.18),
-        0 0 0.95rem rgb(255 223 124 / 0.68);
-    }
-  }
 
-  @keyframes callout-text-shine {
-    0%,
-    100% {
-      transform: scale(1);
-      text-shadow:
-        0 1px 0 rgb(255 255 255 / 0.18),
-        0 0 0.7rem rgb(255 223 124 / 0.55);
-    }
 
-    45%,
-    55% {
-      transform: scale(1.06);
-      text-shadow:
-        0 1px 0 rgb(255 255 255 / 0.18),
-        0 0 0.95rem rgb(255 223 124 / 0.68);
-    }
-  }
 
   .container > * {
     position: absolute;
@@ -516,9 +464,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       padding: 1.4rem 1.1rem 1.2rem;
     }
 
-    .callout__eyebrow {
-      min-block-size: 3.65rem;
-      padding-inline: 1rem;
-    }
+
   }
  </style>
