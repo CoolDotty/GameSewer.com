@@ -1,12 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TwentyTwentySix from '../components/TwentyTwentySix.astro';
 ---
 
-<BaseLayout title="Redirecting...">
-  <meta slot="head" http-equiv="refresh" content="0; url=/2026" />
-  <div style="background-color: black; color: lime;">
-    <p style="display: grid; place-items: center; height: 100vh;">
-      Redirecting to <a href="/2026">/2026</a>...
-    </p>
-  </div>
+<BaseLayout
+  title="Game Sewer 2026"
+  description="Game Sewer 2026 - Vancouver's indie game showcase. Red Gate, June 14, 6–10 PM. Over two dozen exhibitors, videogames, cool booths, and performance art."
+  canonical="/2026/"
+  ogImage="/og-image.png"
+>
+  <TwentyTwentySix />
 </BaseLayout>
+
+<script>
+  history.replaceState(null, '', '/2026');
+</script>

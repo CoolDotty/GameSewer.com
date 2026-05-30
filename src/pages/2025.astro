@@ -7,6 +7,10 @@ const photos = await getArchivedPhotos('CoolDotty', 'game-sewer-photo-archive');
 const thisYearPhotos = photos.filter((photo) => photo.original.startsWith(`${archiveDomain}2025`));
 ---
 
-<BaseLayout title="GameSewer/Vancouver">
+<BaseLayout
+  title="Game Sewer 2025 - Vancouver Indie Game Showcase"
+  description="Game Sewer 2025 - Photos and highlights from Vancouver's indie game showcase event featuring games by really really indie developers."
+  ogImage="/splash2025.webp"
+>
   <Events2025 client:only="react" photos={thisYearPhotos} />
 </BaseLayout>

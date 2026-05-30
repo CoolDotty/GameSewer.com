@@ -4,9 +4,23 @@ import '../styles/globals.css';
 
 interface Props {
   title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  noIndex?: boolean;
 }
 
-const { title = 'GameSewer.com' } = Astro.props;
+const {
+  title = 'GameSewer',
+  description = 'GameSewer is an indie game showcase and community event series in Vancouver, Canada.',
+  canonical,
+  ogImage = '/og-image.png',
+  noIndex = false,
+} = Astro.props;
+
+const site = 'https://gamesewer.com';
+const canonicalUrl = canonical ? `${site}${canonical}` : new URL(Astro.url.pathname, site).href;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${site}${ogImage}`;
 ---
 
 <!doctype html>
@@ -14,10 +28,24 @@ const { title = 'GameSewer.com' } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="pragma" content="no-cache" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="GameSewer" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

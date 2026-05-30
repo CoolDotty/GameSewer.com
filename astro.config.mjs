@@ -1,3 +1,4 @@
+import sitemap from '@astrojs/sitemap';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
@@ -10,7 +11,8 @@ const reactServerEntrypoint = fileURLToPath(
 );
 
 export default defineConfig({
-  integrations: [react()],
+  site: 'https://gamesewer.com',
+  integrations: [react(), sitemap()],
   vite: {
     resolve: {
       alias: {
